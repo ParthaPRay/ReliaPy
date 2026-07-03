@@ -18,8 +18,6 @@ ReliaPy can be used in two ways:
 
 > GitHub Repository: [https://github.com/ParthaPRay/ReliaPy](https://github.com/ParthaPRay/ReliaPy)  
 > Live Hugging Face Space: [https://huggingface.co/spaces/csepartha/ReliaPy](https://huggingface.co/spaces/csepartha/ReliaPy)
-
-> Repository: https://huggingface.co/spaces/csepartha/ReliaPy
 ---
 
 ## Developer
