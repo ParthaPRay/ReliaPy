@@ -422,6 +422,10 @@ GitHub repository: https://github.com/ParthaPRay/ReliaPy
 
 ---
 
+## Run on your localhost
+
+Running on local URL:  http://127.0.0.1:7860
+
 ## Contact
 
 For queries, suggestions, and collaboration:
