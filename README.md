@@ -1,4 +1,5 @@
-<img width="1474" height="745" alt="ReliaPy dashboard screenshot" src="https://github.com/user-attachments/assets/ac83ec77-e854-4656-a5ac-7506664bedf2" />
+<img width="1472" height="722" alt="image" src="https://github.com/user-attachments/assets/b9f8350e-bb94-4f05-94c1-4d797d65369e" />
+
 
 **ReliaPy** is a Colab-ready and Hugging Face Space-ready Python/Gradio workbench for reliability analysis. It provides an interactive dashboard for four major reliability-engineering tasks:
 
