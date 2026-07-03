@@ -1,10 +1,6 @@
-# ReliaPy: Python/Gradio Reliability Analysis Workbench
+<img width="1474" height="745" alt="ReliaPy dashboard screenshot" src="https://github.com/user-attachments/assets/ac83ec77-e854-4656-a5ac-7506664bedf2" />
 
-
-<img width="1474" height="745" alt="image" src="https://github.com/user-attachments/assets/ac83ec77-e854-4656-a5ac-7506664bedf2" />
-
-
-**ReliaPy** is a Colab-ready Python/Gradio workbench for reliability analysis. It provides an interactive dashboard for four major reliability-engineering tasks:
+**ReliaPy** is a Colab-ready and Hugging Face Space-ready Python/Gradio workbench for reliability analysis. It provides an interactive dashboard for four major reliability-engineering tasks:
 
 1. **Life Data Analysis**
 2. **Reliability Growth Analysis**
@@ -13,9 +9,17 @@
 
 The repository contains the main notebook, `ReliaPy_3.ipynb`, together with synthetic benchmark CSV datasets for testing, demonstration, reproducibility, and publication-oriented validation.
 
-> Repository: [https://github.com/ParthaPRay/ReliaPy](https://github.com/ParthaPRay/ReliaPy)
+ReliaPy can be used in two ways:
 
+- **Google Colab / GitHub version:** run the notebook `ReliaPy_3.ipyn4656-a5ac-7506664bedf2" />
 
+**ReliaPy** is a Colab-ready and Hugging Face Space-ready Python/b`.
+- **Online Hugging Face Space version:** use the hosted Gradio app directly.
+
+> GitHub Repository: [https://github.com/ParthaPRay/ReliaPy](https://github.com/ParthaPRay/ReliaPy)  
+> Live Hugging Face Space: [https://huggingface.co/spaces/csepartha/ReliaPy](https://huggingface.co/spaces/csepartha/ReliaPy)
+
+> Repository: https://huggingface.co/spaces/csepartha/ReliaPy
 ---
 
 ## Developer
