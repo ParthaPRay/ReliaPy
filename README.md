@@ -1,24 +1,21 @@
-<img width="1472" height="722" alt="image" src="https://github.com/user-attachments/assets/b9f8350e-bb94-4f05-94c1-4d797d65369e" />
+# ReliaPy: Python/Gradio Reliability Analysis Workbench
 
+<img width="1472" height="722" alt="ReliaPy dashboard screenshot" src="https://github.com/user-attachments/assets/b9f8350e-bb94-4f05-94c1-4d797d65369e" />
 
-**ReliaPy** is a Colab-ready and Hugging Face Space-ready Python/Gradio workbench for reliability analysis. It provides an interactive dashboard for four major reliability-engineering tasks:
+**ReliaPy** is a Python/Gradio reliability-analysis workbench for life data analysis, reliability growth analysis, repairable systems, and accelerated life testing. It is designed to run in **Google Colab**, on **Hugging Face Spaces**, and on a **local machine after PyPI installation**.
+
+ReliaPy provides an interactive dashboard for four major reliability-engineering tasks:
 
 1. **Life Data Analysis**
 2. **Reliability Growth Analysis**
 3. **Repairable Systems Analysis**
 4. **Accelerated Life Testing**
 
-The repository contains the main notebook, `ReliaPy_3.ipynb`, together with synthetic benchmark CSV datasets for testing, demonstration, reproducibility, and publication-oriented validation.
+The repository contains the main notebook, `ReliaPy_3.ipynb`, the Gradio application code, and synthetic benchmark CSV datasets for testing, demonstration, reproducibility, and publication-oriented validation.
 
-ReliaPy can be used in two ways:
+> **GitHub Repository:** [https://github.com/ParthaPRay/ReliaPy](https://github.com/ParthaPRay/ReliaPy)  
+> **Live Hugging Face Space:** [https://huggingface.co/spaces/csepartha/ReliaPy](https://huggingface.co/spaces/csepartha/ReliaPy)
 
-- **Google Colab / GitHub version:** run the notebook `ReliaPy_3.ipyn4656-a5ac-7506664bedf2" />
-
-**ReliaPy** is a Colab-ready and Hugging Face Space-ready Python/b`.
-- **Online Hugging Face Space version:** use the hosted Gradio app directly.
-
-> GitHub Repository: [https://github.com/ParthaPRay/ReliaPy](https://github.com/ParthaPRay/ReliaPy)  
-> Live Hugging Face Space: [https://huggingface.co/spaces/csepartha/ReliaPy](https://huggingface.co/spaces/csepartha/ReliaPy)
 ---
 
 ## Developer
@@ -32,7 +29,7 @@ Email: **parthapratimray1986@gmail.com**
 
 ## Purpose of the Project
 
-ReliaPy is designed as a lightweight, open, and reproducible reliability-analysis tool that can run directly in **Google Colab** using **Gradio**. The goal is to provide an accessible interface for students, researchers, reliability engineers, and tool-paper reviewers to perform common reliability analyses without requiring commercial software.
+ReliaPy is designed as a lightweight, open, and reproducible reliability-analysis tool. It provides an accessible interface for students, researchers, reliability engineers, and software-tool reviewers to perform common reliability analyses without depending on commercial reliability software.
 
 The app is suitable for:
 
@@ -42,6 +39,26 @@ The app is suitable for:
 - synthetic benchmark testing,
 - manuscript figure generation,
 - tool-paper validation workflows.
+
+---
+
+## Ways to Use ReliaPy
+
+ReliaPy can be used in three ways:
+
+1. **Google Colab / GitHub notebook**  
+   Run the notebook `ReliaPy_3.ipynb`.
+
+2. **Online Hugging Face Space**  
+   Use the hosted Gradio application directly:  
+   [https://huggingface.co/spaces/csepartha/ReliaPy](https://huggingface.co/spaces/csepartha/ReliaPy)
+
+3. **Local machine after PyPI installation**  
+   Install the package and launch the app locally using the command:
+
+   ```bash
+   reliapy
+   ```
 
 ---
 
@@ -59,7 +76,7 @@ Open this notebook in Google Colab and run all cells. The notebook installs the 
 
 ## Installation in Google Colab
 
-Run the following command in Colab if dependencies are not already installed:
+Run the following command in Google Colab if dependencies are not already installed:
 
 ```python
 !pip -q install gradio scipy pandas numpy matplotlib openpyxl
@@ -75,11 +92,95 @@ The app will generate a public Gradio link for interactive use.
 
 ---
 
+## Install from PyPI and Run Locally
+
+After publication on PyPI, ReliaPy can be installed on any local machine using:
+
+```bash
+pip install reliapy-workbench
+```
+
+After installation, launch the ReliaPy Gradio dashboard from the terminal or command prompt:
+
+```bash
+reliapy
+```
+
+The application will start on a local Gradio server. Open the following address in your browser:
+
+```text
+http://127.0.0.1:7860
+```
+
+You should see the ReliaPy dashboard with the four reliability-analysis modules.
+
+### Quick Local Test
+
+After installation, verify that the package is available:
+
+```bash
+python -c "import reliapy; print(reliapy.__version__)"
+```
+
+Expected output for the first release:
+
+```text
+0.1.0
+```
+
+Then run:
+
+```bash
+reliapy
+```
+
+and open:
+
+```text
+http://127.0.0.1:7860
+```
+
+### Launch from a Python Script
+
+ReliaPy can also be launched from a Python script:
+
+```python
+from reliapy.app_ui import build_app
+
+demo = build_app()
+demo.queue()
+demo.launch()
+```
+
+For a custom local host and port:
+
+```python
+from reliapy.app_ui import build_app
+
+demo = build_app()
+demo.queue()
+demo.launch(server_name="127.0.0.1", server_port=7860)
+```
+
+For LAN access on the same Wi-Fi or local network:
+
+```python
+from reliapy.app_ui import build_app
+
+demo = build_app()
+demo.queue()
+demo.launch(server_name="0.0.0.0", server_port=7860)
+```
+
+Then open the displayed local or network URL in your browser.
+
+---
+
 ## Key Features
 
-### 1. Life Data Analysis
+## 1. Life Data Analysis
 
-ReliaPy supports life-data modeling for time-to-failure data.
+ReliaPy supports life-data modeling for time-to-failure and right-censored reliability data.
 
 Supported options include:
 
@@ -99,7 +200,7 @@ Typical input columns:
 time, event
 ```
 
-or
+or:
 
 ```text
 hours, status
@@ -107,9 +208,9 @@ hours, status
 
 ---
 
-### 2. Reliability Growth Analysis
+## 2. Reliability Growth Analysis
 
-ReliaPy supports reliability-growth modeling for cumulative event/failure times during test or development programs.
+ReliaPy supports reliability-growth modeling for cumulative event or failure times during test and development programs.
 
 Supported options include:
 
@@ -118,7 +219,7 @@ Supported options include:
 - Automatic change-point detection
 - Reliability-growth plot
 - Duane plot
-- Segment-wise interpretation of beta
+- Segment-wise beta interpretation
 
 Typical input column:
 
@@ -126,7 +227,7 @@ Typical input column:
 event_time
 ```
 
-or
+or:
 
 ```text
 test_time
@@ -134,7 +235,7 @@ test_time
 
 ---
 
-### 3. Repairable Systems Analysis
+## 3. Repairable Systems Analysis
 
 ReliaPy supports recurrent-event modeling for repairable units, fleets, systems, and assets.
 
@@ -153,7 +254,7 @@ Typical input columns:
 event_time, system
 ```
 
-or
+or:
 
 ```text
 repair_time, unit
@@ -161,7 +262,7 @@ repair_time, unit
 
 ---
 
-### 4. Accelerated Life Testing
+## 4. Accelerated Life Testing
 
 ReliaPy supports accelerated life testing under stress conditions.
 
@@ -182,7 +283,7 @@ Typical input columns:
 time, event, temperature
 ```
 
-or
+or:
 
 ```text
 cycles, failed, voltage
@@ -197,10 +298,10 @@ The Gradio interface provides:
 - result tables,
 - plots,
 - notes and interpretations,
-- CSV download for results,
+- CSV download for result tables,
 - PNG download for plots.
 
-Generated PNG plots are intended for reports, teaching notes, and manuscript drafting.
+Generated PNG plots are intended for reports, teaching notes, manuscript drafting, and reliability-analysis documentation.
 
 ---
 
@@ -210,6 +311,9 @@ The repository includes the following main files:
 
 ```text
 ReliaPy_3.ipynb
+app.py
+README.md
+requirements.txt
 ReliaPy_combined_dataset_manifesto.csv
 ReliaPy_SYNTHETIC_DATASETS_README.md
 ```
@@ -220,7 +324,7 @@ It also includes several synthetic CSV datasets grouped by analysis module.
 
 # Synthetic Benchmark Datasets
 
-The datasets are synthetic and are provided for testing the ReliaPy interface and computations. They should not be described as real industrial field data.
+The datasets in this repository are synthetic and are provided for testing the ReliaPy interface and computations. They should not be described as real industrial field data.
 
 Use the manifesto file to identify the correct module, model, time column, event/status column, system column, or stress column:
 
@@ -363,7 +467,7 @@ A useful demonstration sequence is:
 
 The following statement may be used in a paper or technical report:
 
-> ReliaPy is a Python/Gradio reliability-analysis workbench developed for reproducible life data analysis, reliability growth modeling, repairable-system analysis, and accelerated life testing. The tool runs in Google Colab and provides interactive model fitting, visualization, and export of summary tables and plots. Synthetic benchmark datasets were generated to test multiple scenarios, including right censoring, early-life failures, wear-out failures, mixed life populations, reliability improvement, deteriorating growth, change-point behavior, heterogeneous repairable fleets, preventive-maintenance effects, overhaul-based step changes, Arrhenius temperature acceleration, and power-law stress acceleration.
+> ReliaPy is a Python/Gradio reliability-analysis workbench developed for reproducible life data analysis, reliability growth modeling, repairable-system analysis, and accelerated life testing. The tool runs in Google Colab, on Hugging Face Spaces, and locally after Python-package installation. It provides interactive model fitting, visualization, and export of summary tables and plots. Synthetic benchmark datasets were generated to test multiple scenarios, including right censoring, early-life failures, wear-out failures, mixed life populations, reliability improvement, deteriorating growth, change-point behavior, heterogeneous repairable fleets, preventive-maintenance effects, overhaul-based step changes, Arrhenius temperature acceleration, and power-law stress acceleration.
 
 ---
 
@@ -416,15 +520,19 @@ CC BY 4.0 for documentation and datasets
 If you use this tool or the synthetic datasets, please cite the GitHub repository:
 
 ```text
-Ray, P. P. (2026). ReliaPy: Python/Gradio Reliability Analysis Workbench. 
+Ray, P. P. (2026). ReliaPy: Python/Gradio Reliability Analysis Workbench.
 GitHub repository: https://github.com/ParthaPRay/ReliaPy
+Live app: https://huggingface.co/spaces/csepartha/ReliaPy
+```
+
+After PyPI publication, you may also cite the Python package:
+
+```text
+Ray, P. P. (2026). reliapy-workbench: Python package for ReliaPy reliability analysis.
+PyPI package: reliapy-workbench
 ```
 
 ---
-
-## Run on your localhost
-
-Running on local URL:  http://127.0.0.1:7860
 
 ## Contact
 
