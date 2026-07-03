@@ -1,5 +1,9 @@
 # ReliaPy: Python/Gradio Reliability Analysis Workbench
 
+
+<img width="1474" height="745" alt="image" src="https://github.com/user-attachments/assets/ac83ec77-e854-4656-a5ac-7506664bedf2" />
+
+
 **ReliaPy** is a Colab-ready Python/Gradio workbench for reliability analysis. It provides an interactive dashboard for four major reliability-engineering tasks:
 
 1. **Life Data Analysis**
@@ -10,6 +14,7 @@
 The repository contains the main notebook, `ReliaPy_3.ipynb`, together with synthetic benchmark CSV datasets for testing, demonstration, reproducibility, and publication-oriented validation.
 
 > Repository: [https://github.com/ParthaPRay/ReliaPy](https://github.com/ParthaPRay/ReliaPy)
+
 
 ---
 
